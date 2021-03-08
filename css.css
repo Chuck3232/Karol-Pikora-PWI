@@ -1,2 +1,121 @@
-body { background-color: #9BB291 }
-body { text-align: center }
+html {
+	background: rgb(14,32,2);
+	background: linear-gradient(171deg, rgba(14,32,2,1) 0%, rgba(79,131,10,1) 71%, rgba(224,255,0,1) 100%);
+	margin: 0 auto;
+	padding: 0;
+}
+body {
+	margin-top: 10px;
+	margin-left: 20%;
+	margin-right:20%;
+	height: 1000px;
+	min-height: 1000px;
+	background: rgb(33,190,98);
+	background: linear-gradient(318deg, rgba(33,190,98,1) 0%, rgba(255,219,98,1) 100%);
+}
+header{
+	color: #FFFFFF;
+	margin-top: 20px;
+	background-color: #BB4430;
+	Font-size:45px;
+	text-align:center;
+}
+
+nav{
+	margin:10px;
+	width: 100%;
+	text-align:center;
+}
+Footer{
+	margin-top: 20px;
+	background-color: #BB4430;
+	Font-size:18px;
+	text-align:center;
+	border-radius: 15px;
+}
+.footerbutton
+{
+  background-color: #7EBDC2;
+  border: none;
+  color: #FFFFFF;
+  font-size: 12px;
+  padding: 15px 32px;
+  transition: all 0.5s;
+  cursor: pointer;
+  border-radius: 15px;
+
+}
+.footerbutton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.footerbutton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.footerbutton:hover span{
+  color: white;
+    padding-right: 25px;
+}
+.footerbutton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.button {
+  display: inline-block;
+  background-color: #7EBDC2;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  text-decoration: none;
+  font-size: 28px;
+  padding: 15px 32px;
+  transition: all 0.5s;
+  cursor: pointer;
+  display: inline-block;
+}
+	
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button:hover span{
+  color: white;
+    padding-right: 25px;
+}
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+		
+section > div{
+	margin: 20px;
+	margin-bottom: 20px;
+	background-color: #C7D59F;
+	text-align:center;
+	border-radius: 25px;
+	flex-direction: column;
+
+	font-size: 24px;
+}
