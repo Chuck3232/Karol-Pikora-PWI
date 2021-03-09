@@ -22,7 +22,7 @@ header{
 }
 
 nav{
-	margin:10px;
+	margin-left: 10%;
 	width: 100%;
 	text-align:center;
 }
@@ -69,21 +69,31 @@ Footer{
   opacity: 1;
   right: 0;
 }
-.button {
+.btn-group .button {
   display: inline-block;
   background-color: #7EBDC2;
   border: none;
   color: #FFFFFF;
   text-align: center;
   text-decoration: none;
-  font-size: 28px;
+  font-size: 24px;
   padding: 15px 32px;
   transition: all 0.5s;
   cursor: pointer;
   display: inline-block;
+  float: left;
+  width: 20%;
+  height: 80px;
 }
+
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 	
-.button span:after {
+.btn-group .button span:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -92,18 +102,18 @@ Footer{
   transition: 0.5s;
 }
 
-.button span {
+.btn-group .button span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.button:hover span{
+.btn-group .button:hover span{
   color: white;
     padding-right: 25px;
 }
-.button:hover span:after {
+.btn-group .button:hover span:after {
   opacity: 1;
   right: 0;
 }
