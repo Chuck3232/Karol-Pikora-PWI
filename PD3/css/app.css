@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+#app {
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    background: #9E829C;
+    text-align: center; margin: auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    background: none;
+    font-size: 20px;
+
+}
+
+.header > * {
+    color: #eeeeee;
+}
+
+.turn {
+    padding: 12px;
+}
+
+.status {
+    padding: 12px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.restart {
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+
+}
+
+.board {
+    display: grid;
+    background: #3A3E3B;
+    gap: 5px;
+    padding: 5px;
+    flex-grow: 1;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.board__tile {
+    background: #F0EFF4;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+    color: #222222;
+}
+
+.board__tile:hover {
+    background: #eeeeee;
+}
+
+.board__tile--winner {
+    color: red;
+}
