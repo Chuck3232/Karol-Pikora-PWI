@@ -6,11 +6,10 @@ export default class GameLayout {
             <div class="header">
                 <div class="turn"></div>
                 <div class="status"></div>               
-                <div>Computer</div>
+                <div>AI</div>
                 <input type="radio" class="radio" id="yes" name="status" value="yes" >
                 <label for="yes">ON</label><br>
-                <input type="radio" class="radio" id="no" name="status" value="no" checked="checked">
-                <label for="no">OFF</label><br>
+                
                 
             </div>
             <div class="board">
@@ -30,7 +29,7 @@ export default class GameLayout {
         `;
 
         this.onTileClick = undefined;
-        this.onRestartClick = undefined;
+        this.onRestartClick = undefined;       
     this.root.querySelectorAll(".board__tile").forEach(tile => {
             tile.addEventListener("click", () => {
                 if (this.onTileClick) {               
@@ -53,6 +52,23 @@ export default class GameLayout {
                 }
             });
         });
+        function deselectableRadios(rootElement) {
+            if(!rootElement) rootElement = document;
+            if(!window.radioChecked) window.radioChecked = null;
+            window.radioClick = function(e) {
+              const obj = e.target;
+              if(e.keyCode) return obj.checked = e.keyCode!=32;
+              obj.checked = window.radioChecked != obj;
+              window.radioChecked = obj.checked ? obj : null;
+            }
+            rootElement.querySelectorAll("input[type='radio']").forEach( radio => {
+              radio.setAttribute("onclick", "radioClick(event)");
+              radio.setAttribute("onkeyup", "radioClick(event)");
+            });
+          }
+          
+          deselectableRadios();
+          
         
 
         this.root.querySelector(".restart").addEventListener("click", () => {
@@ -63,6 +79,7 @@ export default class GameLayout {
         });
 
         this.root.querySelectorAll('input[type=radio][name="status"]').forEach(radio => radio.addEventListener('change', () =>  {
+            
                 this.onRestartClick();
                 this.taken=new Array(9).fill(-1);
             
