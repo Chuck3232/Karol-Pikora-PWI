@@ -65,7 +65,7 @@ section > h3{
   text-align: center;
   
 }
-section > h4{
+section > .app{
 
 	margin-bottom: 20px;
 
@@ -220,7 +220,7 @@ Footer{
     font-size: 18px;
     width: 98%;  
   }
-  section > h4{
+  section > .app{
     margin-bottom: 17px;   
     margin-left: 10%;
     width: 80%;    
