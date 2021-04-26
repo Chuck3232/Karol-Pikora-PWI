@@ -1,19 +1,21 @@
-import Game from "./Game.js";
-import GameLayout from "./GameLayout.js";
-
-
-let game = new Game();
-let gameLayout = new  GameLayout(document.getElementById("app"));
-
-
-gameLayout.onTileClick = function (i) {
-    game.makeMove(i);
-    gameLayout.update(game);
+function lazyLoad(){
+    $('.lazy-img').each(function(){
+        if ($(this).offset().top < window.innerHeight + window.pageYOffset + 300) { 
+            $(this).attr('src', $(this).data('src'));
+            $(this).removeClass('lazy-img');    
+        } 
+    })
+};
+var eventTimeout;
+   var eventThrottler = function () {
+      if ( !eventTimeout ) {
+         eventTimeout = setTimeout(function() {
+            eventTimeout = null;
+            lazyLoad();
+      }, 1000);
+   }
 };
 
-gameLayout.onRestartClick = function () {
-    game = new Game();
-    gameLayout.update(game);
-};
-
-gameLayout.update(game);
+$(document).on('scroll', function() {       
+    eventThrottler();
+});
